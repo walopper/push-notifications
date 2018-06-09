@@ -8,19 +8,18 @@ self.addEventListener('activate', function (event) {
 });
 
 // escucho push notifications
-self.addEventListener('push', function (event) {
+self.addEventListener('push', event => {
     console.log('Push Notification recibida', event);
 
     if (event.data) {
-        pushdata = event.data.json();
-        console.log('push data:', pushdata);
+        var pushdata = JSON.parse(event.data.json()); // ojo que no se define con let
     } else {
         console.log('La notificacion vino sin data');
         return;
     }
 
     // ver opciones en https://developer.mozilla.org/es/docs/Web/API/ServiceWorkerRegistration/showNotification
-    var pushOptions = {
+    const pushOptions = {
         title: 'hola',
         body: pushdata.body,
         icon: '/images/badge.png',
@@ -49,15 +48,7 @@ self.addEventListener('push', function (event) {
         // }
     }
 
-    // retorna una promesa
-    console.log('pushdata.title', pushdata.title);
-    let pushStatus = sendPushNotification(pushdata.title, pushOptions);
-
-    event.waitUntil(pushStatus);
+    event.waitUntil(
+        self.registration.showNotification(pushdata.title, pushOptions) // => promesa
+    );
 });
-
-function sendPushNotification(title, options){
-    console.log("title");
-    console.log(title);
-    return self.registration.showNotification(title, options)
-}
