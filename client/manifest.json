@@ -1,0 +1,13 @@
+{
+    "dir": "ltr",
+    "lang": "es",
+    "name": "Push-demo",
+    "scope": "/",
+    "display": "browser",
+    "start_url": "http://localhost:4044/",
+    "short_name": "pushdemo",
+    "theme_color": "transparent",
+    "description": "Push-demo",
+    "orientation": "any",
+    "background_color": "transparent",
+}

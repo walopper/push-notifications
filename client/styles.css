@@ -1,0 +1,97 @@
+* {
+    font-family: 'Open Sans';
+}
+
+body {
+    background-color: #f8f8f8;
+    margin: 0;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.subscriptionDemo {
+    text-align: center;
+    padding: 40px 0;
+}
+
+#enableNotif {
+    display: none;
+    height: 40px;
+    background-color: rgb(0%, 46.8%, 91.3%);
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#enableNotif:hover {
+    background-color: rgb(0, 107, 206);
+}
+
+#susDone {
+    padding: 40px;
+    color: #444;
+    font-size: 16px;
+}
+
+#susDone span {
+    color: rgb(9.7%, 63.6%, 0%);
+    font-family: 'Courier New';
+    font-weight: bold;
+}
+
+#sendPush {
+    margin-top: 20px;
+    height: 30px;
+    background-color: rgb(0, 160, 19);
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form {
+    display: inline-block;
+    margin-top: 50px;
+    border-radius: 6px;
+    padding: 20px;
+    border: 1px solid #eee;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .1);
+    background: #fff;
+}
+
+.form .title {
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.frow {
+    margin-bottom: 15px;
+}
+
+.frow label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.frow input {
+    border: 1px solid #ddd;
+    height: 32px;
+    color: #777;
+    font-size: 13px;
+    width: 200px;
+    border-radius: 3px;
+    padding: 0 8px;
+}
+
+.frow:nth-child(3) input {
+    width: 280px;
+}

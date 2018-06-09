@@ -2,8 +2,9 @@
 Simple ejemplo de push notifications en service worker.
 
 Con fines de prueba: 
-- este proyecto tiene un servidor de notificaciones push, que es el server que genera la notificacion, y un cliente basico http para servir la web de prueba. Ambon son independientes.
-- Las dependencias estan todas juntas
+- Este proyecto tiene un servidor de notificaciones push, que es el server que genera la notificacion, y un cliente basico http para servir la web de prueba. Ambon son independientes.
+- Las dependencias estan todas junta
+- app.js en el cliente utiliza ES6, por lo que el navegador a usar en la prueba debe ser moderno y compatible.
 
 Tener en cuenta que /server y /client son totalmente independientes. Estan en el mismo proyecto solo para facilitar la demo.
 

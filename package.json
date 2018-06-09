@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "server": "node server",
-    "client": "http-server ./client -p 4044 -d false -g --cors -o"
+    "client": "http-server ./client -p 4044 -d false -g --cors -o",
+    "web-push": "web-push",
+    "vapid": "web-push generate-vapid-keys --json > vapid-keys.json && echo -e \"\n\n**********************************************************\nLas keys fueron generadas y almacenadas en vapid-keys.json\n**********************************************************\n\""
   },
   "dependencies": {
     "body-parser": "^1.18.3",
