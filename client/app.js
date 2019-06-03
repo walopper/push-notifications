@@ -89,6 +89,7 @@ function configurePushSub() {
             console.log('New subscription ID:', subID);
             document.getElementById('susDone').style.display = 'block';
             document.getElementById('newSubId').innerHTML = subID;
+            window.subID = subID;
             document.getElementById('sendPush').addEventListener('click', sendPush);
         })
         .catch(function (err) {
@@ -111,15 +112,16 @@ function askForNotificationPermission() {
 }
 
 const sendPush = () => {
+    if(!window.subID) return;
+        
     console.log('Enviando notificacion push');
 
-    const subID = document.getElementById('newSubId').innerHTML;
     const pushConfig = {
         title: document.getElementById('notifTitle').value || 'Titulo de la notificcion',
         body: document.getElementById('notifBody').value || 'Texto adicional opcional',
     }
 
-    return fetch(`http://localhost:5055/send/${subID}`, {
+    return fetch(`http://localhost:5055/send/${window.subID}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
