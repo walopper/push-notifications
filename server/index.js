@@ -28,8 +28,13 @@ function auth(req, res, next) {
 app.post('/send/:subID', auth, (req, res) => {
     var subID = req.params.subID;
 
-    Subscriptions.findById(subID)
+    Subscriptions.findById(req.params.subID)
         .then(subData => {
+            if(!subData) {
+                res.status(404).json({ error: 'No se encontro la suscripcion con ese ID', subid: subID }));
+                return;
+            }
+        
             var pushConfig = {
                 endpoint: subData.endpoint,
                 keys: {
