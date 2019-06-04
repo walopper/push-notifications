@@ -85,7 +85,7 @@ function configurePushSub() {
             }
             return res.json();
         })
-        .then(subID => {
+        .then(({ subID }) => {
             console.log('New subscription ID:', subID);
             document.getElementById('susDone').style.display = 'block';
             document.getElementById('newSubId').innerHTML = subID;
