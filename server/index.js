@@ -73,7 +73,7 @@ app.post('/subscription', (req, res) => {
         if (err) {
             return res.status(500).send({ error: 'No se pudo almacenar la suscripcion', message: err });
         }
-        res.status(201).json(subs._id);
+        res.status(200).json({ subID: subs._id });
     });
 });
 
